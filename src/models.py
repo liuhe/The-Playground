@@ -2,6 +2,7 @@ import os
 import config
 import httpx
 from langchain_groq import ChatGroq
+from groq import Groq
 
 
 def create_groq_chat_model(model="llama3-70b-8192", temperature: float = 0):
@@ -13,3 +14,9 @@ def create_groq_chat_model(model="llama3-70b-8192", temperature: float = 0):
         http_client=httpx.Client(proxy=os.getenv(config.ENV_GROQ_PROXY)),
     )
     return groq_model
+
+def create_groq_model():
+    groq = Groq (
+        http_client=httpx.Client(proxy=os.getenv(config.ENV_GROQ_PROXY)),
+    )
+    return groq
