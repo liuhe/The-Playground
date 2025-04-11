@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ai-llm-playground
+
+  ai:
+    openai:
+      base-url: https://api.groq.com/openai
+      chat:
+        options:
+          model: llama3-70b-8192
+          temperature: 1
+      api-key: ${GROQ_API_KEY}
+
+# If you need to set an HTTP proxy, you can configure it through System Properties.
