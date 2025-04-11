@@ -3,7 +3,7 @@ import unittest
 from . import audio_to_text
 
 class TestAudioToText(unittest.TestCase):
-    def test_audio_to_text_valid_file(self):
+    def test_audio_to_text(self):
         # Replace 'sample_audio.mp3' with a valid test audio file path
         test_file = os.path.dirname(__file__) + "/audio_to_text_test.m4a"
         sub_words = audio_to_text(test_file)
