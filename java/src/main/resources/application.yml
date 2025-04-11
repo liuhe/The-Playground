@@ -9,6 +9,10 @@ spring:
         options:
           model: llama3-70b-8192
           temperature: 1
+      audio:
+        transcription:
+          options:
+            model: "whisper-large-v3-turbo"
       api-key: ${GROQ_API_KEY}
 
 # If you need to set an HTTP proxy, you can configure it through System Properties.
