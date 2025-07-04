@@ -1,4 +1,4 @@
-import models
+from groq import Groq
 
 class Word:
     def __init__(self, word: str, start: float, end: float):
@@ -9,9 +9,7 @@ class Word:
     def __repr__(self):
         return f"Word(word={self.word}, start={self.start}, end={self.end})"
 
-def audio_to_text(filepath: str) -> list[Word]:
-    groq = models.create_groq_model()
-
+def transcribe(groq: Groq, filepath: str) -> list[Word]:
     with open(filepath, "rb") as file:
         transcription = groq.audio.transcriptions.create(
             model="whisper-large-v3-turbo",

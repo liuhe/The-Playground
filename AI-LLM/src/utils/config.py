@@ -12,11 +12,3 @@ def get_env_variable_or_prompt(key):
         if value:
             os.environ[key] = value
     return value
-
-# constants
-ENV_GROQ_API_KEY = "GROQ_API_KEY"
-ENV_GROQ_PROXY = "GROQ_PROXY"
-
-# Uncomment and enter values below for easier execution.
-# set_env_variable_if_missing(ENV_GROQ_API_KEY, '')
-# set_env_variable_if_missing(ENV_HTTP_PROXY, '')

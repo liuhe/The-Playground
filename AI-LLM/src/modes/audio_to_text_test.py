@@ -1,12 +1,14 @@
 import os
 import unittest
+import models
 from . import audio_to_text
 
 class TestAudioToText(unittest.TestCase):
     def test_audio_to_text(self):
         # Replace 'sample_audio.mp3' with a valid test audio file path
         test_file = os.path.dirname(__file__) + "/audio_to_text_test.m4a"
-        sub_words = audio_to_text(test_file)
+        groq = models.groq.create_groq_model()
+        sub_words = audio_to_text.transcribe(groq, test_file)
         for word in sub_words:
             self.assertIsInstance(word.word, str)
             self.assertIsInstance(word.start, float)

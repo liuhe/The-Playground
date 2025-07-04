@@ -1,12 +1,11 @@
 import models
+import models.groq
 from langchain_core.messages import (
     HumanMessage,
     SystemMessage,
 )
 
-
-def sanitize_filename(filename: str) -> str:
-    model = models.create_groq_chat_model(temperature=1)
+def sanitize_filename(filename: str, model=models.groq.create_groq_chat_model(temperature=1)) -> str:
     rs = model.invoke(input=[
         SystemMessage(content='''
             You are a filename sanitization tool.
